@@ -50,7 +50,7 @@ namespace CardGames
 		private static void DrawGame(Snap myGame)
 		{
 			SwinGame.ClearScreen(Color.White);
-
+			 
 			// Draw the top card
 			Card top = myGame.TopCard;
 			if (top != null)
@@ -88,9 +88,10 @@ namespace CardGames
 
 			//Load the card images and set their cell details
             LoadResources();
-            
+            SwinGame.LoadSoundEffectNamed ("Slap", "slap.wav");
 			// Create the game!
 			Snap myGame = new Snap ();
+			SwinGame.PlaySoundEffect ("Slap");  
 
             //Run the game loop
             while(false == SwinGame.WindowCloseRequested())
