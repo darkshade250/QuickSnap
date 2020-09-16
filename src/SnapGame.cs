@@ -49,8 +49,13 @@ namespace CardGames
 		/// <param name="myGame">The details of the game -- mostly top card and scores.</param>
 		private static void DrawGame(Snap myGame)
 		{
+<<<<<<< HEAD
 			SwinGame.DrawBitmap("cardsBoard.png", 0, 0);
 
+=======
+			SwinGame.ClearScreen(Color.White);
+			 
+>>>>>>> add-card-soung
 			// Draw the top card
 			Card top = myGame.TopCard;
 			if (top != null)
@@ -88,9 +93,11 @@ namespace CardGames
 
 			//Load the card images and set their cell details
             LoadResources();
-            
-			// Create the game!
 			Snap myGame = new Snap ();
+			SwinGame.LoadSoundEffectNamed ("Slap", "slap.wav");
+			SwinGame.PlaySoundEffect ("Slap");  
+			// Create the game!
+
 
             //Run the game loop
             while(false == SwinGame.WindowCloseRequested())
